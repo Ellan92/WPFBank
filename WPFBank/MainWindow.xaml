@@ -7,6 +7,61 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
 
+        <Label
+            Grid.Column="1"
+            Grid.Row="1"
+            Content="Username"
+            FontSize="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <Label
+            Grid.Column="1"
+            Grid.Row="2"
+            Content="Password"
+            FontSize="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBox
+            Name="txtUsername"
+            Grid.Column="2"
+            Grid.Row="1"
+            Height="40"/>
+        <TextBox
+            Name="txtPassword"
+            Grid.Column="2"
+            Grid.Row="2"
+            Height="40"/>
+        
+        <Button
+            Name="btnRegister"
+            Content="Register!"
+            Grid.Column="1"
+            Grid.Row="3"
+            Height="50"
+            Width="200"
+            FontSize="20" Click="btnRegister_Click"/>
+        <Button
+            Name="btnLogin"
+            Content="Log in!"
+            Grid.Column="2"
+            Grid.Row="3"
+            Height="50"
+            Width="200"
+            FontSize="20" Click="btnLogin_Click"/>
     </Grid>
 </Window>

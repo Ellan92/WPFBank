@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace WPFBank
 {
@@ -23,5 +11,47 @@ namespace WPFBank
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            bool isAdmin = (bool)cbAdmin.IsChecked!;
+
+            if (username != "" && password != "" && isAdmin == false)
+            {
+                Client client = new(username, password, isAdmin);
+                UserManager.People.Add(client);
+
+                MessageBox.Show("Client added! You can now log in.");
+
+                MainWindow mainWindow = new();
+                mainWindow.Show();
+                Close();
+
+            }
+            else if (username != "" && password != "" && isAdmin == true)
+            {
+                Admin admin = new(username, password, isAdmin);
+                UserManager.People.Add(admin);
+
+                MessageBox.Show("Admin added! You can now log in.");
+
+                MainWindow mainWindow = new();
+                mainWindow.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Some of the fields are empty");
+            }
+
+
+        }
+        public void UpdateUi()
+        {
+
+        }
+
     }
 }
