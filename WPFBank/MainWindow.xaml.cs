@@ -42,7 +42,7 @@ namespace WPFBank
                 }
                 else
                 {
-                    MessageBox.Show("User Does not exist.. Try Again!");
+                    MessageBox.Show("User Does not exist, Try Again!");
                 }
             }
         }
